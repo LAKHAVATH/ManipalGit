@@ -4,6 +4,7 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="Data.Driven.REadExcel"/>
+      <class name="Data.Driven.WriteExcel"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
