@@ -4,24 +4,30 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>DATAAXIS</groupId>
-  <artifactId>datadriven</artifactId>
+  <groupId>DataDriven</groupId>
+  <artifactId>Testing</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>datadriven</name>
+  <name>Testing</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+   <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
     
-<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml-schemas -->
-<dependency>
+    <dependency>
 <groupId>org.apache.poi</groupId>
 <artifactId>poi-ooxml-schemas</artifactId>
 <version>4.0.1</version>
@@ -40,23 +46,20 @@
 <artifactId>poi</artifactId>
 <version>4.0.1</version>
 </dependency>
-  <!-- https://mvnrepository.com/artifact/org.testng/testng -->
-<dependency>
+
+   <dependency>
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
     <version>7.7.0</version>
     <scope>test</scope>
 </dependency>
+
+
 <dependency>
     <groupId>org.seleniumhq.selenium</groupId>
     <artifactId>selenium-java</artifactId>
     <version>4.15.0</version>
 </dependency>
-  	<dependency>
-  		<groupId>TestNG</groupId>
-  		<artifactId>Axis</artifactId>
-  		<version>0.0.1-SNAPSHOT</version>
-  	</dependency>
   </dependencies>
 
   <build>
@@ -79,6 +82,13 @@
         <plugin>
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.1</version>
+          <configuration>
+				<suiteXmlFiles>
+						<suiteXmlFile>
+                            	testng.xml
+						</suiteXmlFile>
+					</suiteXmlFiles>
+</configuration>
         </plugin>
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
